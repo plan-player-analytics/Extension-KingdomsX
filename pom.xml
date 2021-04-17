@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.djrapitops</groupId>
-    <artifactId>Extension-template</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>Extension-KingdomsX</artifactId>
+    <version>1.10.17-R0.1</version>
     <build>
         <plugins>
             <plugin>
@@ -29,10 +29,10 @@
     <repositories>
         <!-- Platforms -->
 
-        <!--        <repository>-->
-        <!--            <id>spigot-repo</id>-->
-        <!--            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>-->
-        <!--        </repository>-->
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
         <!--        <repository>-->
         <!--            <id>sponge-repo</id>-->
         <!--            <url>https://repo.spongepowered.org/repository/maven-public/</url>-->
@@ -61,21 +61,21 @@
         </dependency>
 
         <!-- Plugin API Dependency -->
-        <!--        <dependency>-->
-        <!--            <groupId></groupId>-->
-        <!--            <artifactId></artifactId>-->
-        <!--            <version></version>-->
-        <!--            <scope>provided</scope>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.github.cryptomorin</groupId>
+            <artifactId>kingdoms</artifactId>
+            <version>1.10.17</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!-- Platforms -->
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.spigotmc</groupId>-->
-        <!--            <artifactId>spigot-api</artifactId>-->
-        <!--            <version>1.16.5-R0.1-SNAPSHOT</version>-->
-        <!--            <scope>provided</scope>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.16.5-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
         <!--        <dependency>-->
         <!--            <groupId>org.spongepowered</groupId>-->
         <!--            <artifactId>spongeapi</artifactId>-->
