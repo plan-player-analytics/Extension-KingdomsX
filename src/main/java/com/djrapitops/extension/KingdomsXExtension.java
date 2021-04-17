@@ -141,7 +141,7 @@ public class KingdomsXExtension implements DataExtension {
                         .priority(80)
                         .icon(Icon.called("calendar").of(Family.REGULAR).of(Color.RED).build())
                         .formatAsDateWithYear()
-                        .buildNumber(() -> lastInvasion))
+                        .buildNumber(lastInvasion))
                 .addValue(Long.class, valueBuilder("Amount of lands")
                         .priority(70)
                         .icon(Icon.called("square").of(Color.AMBER).build())
@@ -149,6 +149,6 @@ public class KingdomsXExtension implements DataExtension {
                 .addValue(Double.class, valueBuilder("Might")
                         .priority(60)
                         .icon(Icon.called("bolt").of(Color.BLUE).build())
-                        .buildDouble(() -> might));
+                        .buildDouble(might));
     }
 }
