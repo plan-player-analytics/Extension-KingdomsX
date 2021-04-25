@@ -6,7 +6,7 @@
 
     <groupId>com.djrapitops</groupId>
     <artifactId>Extension-KingdomsX</artifactId>
-    <version>1.10.17-R0.2</version>
+    <version>1.10.17-R0.3</version>
     <build>
         <plugins>
             <plugin>

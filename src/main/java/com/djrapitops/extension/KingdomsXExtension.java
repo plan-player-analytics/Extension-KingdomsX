@@ -60,14 +60,14 @@ public class KingdomsXExtension implements DataExtension {
 
         Optional<Kingdom> kingdomOptional = Optional.ofNullable(player.getKingdom());
 
-        String kingdomName = kingdomOptional.map(Kingdom::getName).orElse(null);
+        String kingdomName = kingdomOptional.map(Kingdom::getName).orElse("No kingdom");
         String kingName = kingdomOptional.map(Kingdom::getKing)
                 .map(KingdomPlayer::getOfflinePlayer)
                 .map(OfflinePlayer::getName)
                 .orElse(null);
         String nationName = kingdomOptional.map(Kingdom::getNation)
                 .map(Nation::getName)
-                .orElse(null);
+                .orElse("No nation");
 
         double power = player.getPower();
         long lastDonationTime = player.getLastDonationTime();
@@ -94,7 +94,7 @@ public class KingdomsXExtension implements DataExtension {
                         .priority(70)
                         .icon(Icon.called("flag").of(Color.GREEN).build())
                         .showInPlayerTable()
-                        .buildGroup(new String[]{nationName != null ? nationName : "No nation"}))
+                        .buildGroup(new String[]{nationName}))
                 .addValue(Double.class, valueBuilder("Power")
                         .priority(60)
                         .icon(Icon.called("bolt").of(Color.AMBER).build())
