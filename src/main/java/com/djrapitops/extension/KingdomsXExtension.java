@@ -34,8 +34,8 @@ import com.djrapitops.plan.extension.icon.Family;
 import com.djrapitops.plan.extension.icon.Icon;
 import com.djrapitops.plan.extension.table.Table;
 import org.bukkit.OfflinePlayer;
-import org.kingdoms.constants.kingdom.Kingdom;
-import org.kingdoms.constants.kingdom.Nation;
+import org.kingdoms.constants.group.Kingdom;
+import org.kingdoms.constants.group.Nation;
 import org.kingdoms.constants.land.Land;
 import org.kingdoms.constants.land.location.SimpleChunkLocation;
 import org.kingdoms.constants.player.KingdomPlayer;
@@ -50,8 +50,6 @@ import java.util.*;
 @PluginInfo(name = "KingdomsX", iconName = "fort-awesome", iconFamily = Family.BRAND, color = Color.AMBER)
 @TabInfo(tab = "Donations", iconName = "money-bill-wave", elementOrder = {ElementOrder.VALUES})
 public class KingdomsXExtension implements DataExtension {
-
-    public KingdomsXExtension() { }
 
     @DataBuilderProvider
     public ExtensionDataBuilder playerData(UUID playerUUID) {
@@ -75,6 +73,9 @@ public class KingdomsXExtension implements DataExtension {
         long totalDonations = player.getTotalDonations();
 
         Icon fortIcon = Icon.called("fort-awesome").of(Family.BRAND).of(Color.AMBER).build();
+
+        String donationsTab = "Donations";
+
         return newExtensionDataBuilder()
                 .addValue(Boolean.class, valueBuilder("Has kingdom")
                         .priority(100)
@@ -103,17 +104,17 @@ public class KingdomsXExtension implements DataExtension {
                         .priority(60)
                         .formatAsDateWithYear()
                         .icon(Icon.called("calendar").of(Family.REGULAR).of(Color.BLUE).build())
-                        .showOnTab("Donations")
+                        .showOnTab(donationsTab)
                         .buildNumber(lastDonationTime))
                 .addValue(Long.class, valueBuilder("Last Donation Amount")
                         .priority(50)
                         .icon(Icon.called("money-bill-wave").of(Color.BLUE).build())
-                        .showOnTab("Donations")
+                        .showOnTab(donationsTab)
                         .buildNumber(lastDonationAmount))
                 .addValue(Long.class, valueBuilder("Total Donations")
                         .priority(40)
                         .icon(Icon.called("money-bill-wave").of(Color.BLUE).build())
-                        .showOnTab("Donations")
+                        .showOnTab(donationsTab)
                         .buildNumber(totalDonations));
     }
 
